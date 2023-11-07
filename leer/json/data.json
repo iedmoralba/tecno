@@ -1,0 +1,19 @@
+{
+ "lecturas":[
+   {
+    "nombre":"3. Los panecillos de pasas",
+    "link":"lecturas/003.html",
+    "portada":"img/panecillos.png"
+   },
+   {
+    "nombre":"2. Estrellas voladoras",
+    "link":"lecturas/002.html",
+    "portada":"img/estrellas.png"
+   },
+   {
+    "nombre":"1. La semilla",
+    "link":"lecturas/001.html",
+    "portada":"img/semilla.png"
+   }
+ ]
+}
