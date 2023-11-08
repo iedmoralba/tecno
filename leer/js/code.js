@@ -1,4 +1,4 @@
-const titulo=document.querySelector("#titulo2");
+const titulo=document.querySelector("#titulo");
 		const texto=document.querySelector("#texto");
 		const autor=document.querySelector("#autor");
 		const preguntas=document.querySelector("#preguntas");
