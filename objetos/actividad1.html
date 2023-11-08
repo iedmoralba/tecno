@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8"/>
+	<title>ElegantGeorge</title>
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+	<style type="text/css">
+		.flex{
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-direction: row;
+			flex-direction: row;
+			-webkit-flex-wrap: nowrap | wrap | wrap-reverse;
+			flex-wrap: nowrap | wrap | wrap-reverse;
+			-webkit-justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+			justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+			-webkit-align-items: flex-start | flex-end | center | baseline | stretch;
+			align-items: flex-start | flex-end | center | baseline | stretch;
+			-webkit-align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+			 align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+		}
+		.noselect{
+		    -webkit-user-select: none;
+		    -moz-user-select: none;
+		    -ms-user-select:none;
+		}
+		*{
+			margin:0;
+			padding:0;
+			box-sizing:border-box; 
+			-moz-box-sizing:border-box; /* Firefox */ 
+			-webkit-box-sizing:border-box; /* Safari */
+		}
+		.lienzo{
+			border:1px solid #B2ADAD;
+			box-shadow: 0px 0px 3px 3px #E3DCDC;
+			width: 800px;
+			height: 550px;
+			margin: 0 auto;
+			display: none;
+			position: relative;
+			margin-top: 20px;
+			background-color: #e8a31c;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23eac56c' fill-opacity='0.36' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+		}
+		#autor{
+			margin-top: 200px;
+			font-family: Pacifico;
+			font-size: 50px;
+		}
+		#autor,#eslogan{
+			width: 100%;
+			text-align: center;
+		}
+		#eslogan{
+			font-family: 'Love Ya Like A Sister', cursive;
+			color:#FFFFFF;
+			font-size: 20px;
+		}
+		#btn_inicio{
+			width: 40px;
+			height: 40px;
+			background: url("img/botonp.png");
+			background-size: 100% 100%;
+			margin: 0 auto;
+			margin-top: 20px;
+			cursor: pointer;
+		}
+		.titulo{
+			margin-top: 30px;
+			margin-left: 30px;
+			color: white;
+			font-size: 30px;
+		}
+		.desc{
+			margin-top: 15px;
+			margin-left: 30px;
+			font-size: 20px;
+			margin-bottom: 30px;
+		}
+		.grupo{
+			margin-top: 10px;
+			margin-left: 30px;
+			width: 92%;
+			height: 165px;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-justify-content: center;
+			justify-content: center;
+			margin-bottom: 60px;
+		}
+		.cuadro{
+			width: 150px;
+			height: 150px;
+			margin: 5px;
+			cursor: pointer;
+		}
+		#artificial{
+			margin-left: 120px;
+			background: url("img/caja2.png");
+			border: 0;
+		}
+		#natural{
+			background: url("img/caja2.png");
+			border: 0;
+		}
+		.tipo{
+			width: 70%;
+			text-align: center;
+			color:white;
+			font-size: 20px;
+			background: black;
+			margin: 0 auto;
+			margin-top: 140px;
+			border-radius: 20px;
+		}
+		#bien{
+			width: 350px;
+			height: 350px;
+			margin: 0 auto;
+			background: url("img/bien.png");
+			background-size: 100% 100%;
+			margin-top: 30px;
+		}
+		#fin{
+			display: block;
+			margin: 0 auto;
+			width: 350px;
+			text-align: center;
+			font-size: 30px;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="lienzo" id="lienzo1">
+		<p id="autor">ElegantGeorge</p>
+		<p id="eslogan">"Aprendizaje Digital"</p>
+		<div id="btn_inicio"></div>
+	</div>
+	<div class="lienzo" id="lienzo2">
+		<p class="titulo">Actividad:</p>
+		<p class="desc">Clasifica los siguiente objetos en naturales o artificiales.</p>
+		<div class="grupo" id="grupo1">
+			<div class="cuadro obj"></div>
+			<div class="cuadro obj"></div>
+			<div class="cuadro obj"></div>
+			<div class="cuadro obj"></div>
+		</div>
+		<div class="grupo">
+			<div class="cuadro" id="natural">
+				<div class="tipo">Natural</div>
+			</div>
+			<div class="cuadro" id="artificial">
+				<div class="tipo">Artificial</div>
+			</div>
+		</div>
+	</div>
+	<div class="lienzo" id="lienzo3">
+		<div id="bien"></div>
+		<div id="fin">Actividad Terminada</div>
+	</div>
+
+
+	<script type="text/javascript">
+		var indice=3;
+		var objetoActivo="";
+		//imagenes
+		var objetos=["flor.png--n","auto.png--a","tronco.png--n","casa.png--a","ave.png--n","tijeras.png--a","manzana.png--n",
+						"cel.png--a","arbol.png--n"];
+		//cuando se cargue la pagina
+		$(document).ready(function() {
+			//mostramos el primer lienzo
+			$("#lienzo1").css("display","block");
+			//le añadimos el evento clic al boton inicio
+			$( "#btn_inicio" ).click(function() {
+				$("#lienzo1").css("display","none");
+				$("#lienzo2").css("display","block");
+			});
+			$( "#bien" ).click(function() {
+				location.reload();
+			});
+			//hacemos droppable las cajas
+			$("#natural").droppable({
+				drop: function(event,ui){
+					if($(objetoActivo).attr("tipo")==="n"){
+						$(objetoActivo).remove();
+						indice++;
+						if(objetos[indice]){
+							var t=objetos[indice];
+							t=t.split("--");
+							var imagen=t[0];
+							var tipo=t[1];
+							
+							//creamos el objeto
+							var a=document.createElement("div");
+							a.setAttribute("class","cuadro obj");
+							a.style.background="url(img/"+imagen+")";
+							$(a).attr("tipo",tipo);
+							$(a).attr("img",imagen);
+							$("#grupo1").append(a);
+							$(a).draggable({
+								start: function(event,ui){
+									objetoActivo=this;
+									//console.log(objetoActivo);
+								}
+							});
+						}
+						evaluar();
+					}else{
+						//capturamos la ruta
+						var ruta=$(objetoActivo).attr("img")
+						console.log(ruta);
+						//lo removemos del Dom
+						$(objetoActivo).remove();
+						//creamos el objeto
+						var a=document.createElement("div");
+						a.setAttribute("class","cuadro obj");
+						a.style.background="url(img/"+ruta+")";
+						$(a).attr("tipo","a");
+						$(a).attr("img",ruta);
+						$("#grupo1").append(a);
+						$(a).draggable({
+							start: function(event,ui){
+								objetoActivo=this;
+								//console.log(objetoActivo);
+							}
+						});
+
+					}
+				}
+			});
+
+			$("#artificial").droppable({
+				drop: function(event,ui){
+					if($(objetoActivo).attr("tipo")==="a"){
+						$(objetoActivo).remove();
+						indice++;
+						if(objetos[indice]){
+							var t=objetos[indice];
+							t=t.split("--");
+							var imagen=t[0];
+							var tipo=t[1];
+							
+							//creamos el objeto
+							var a=document.createElement("div");
+							a.setAttribute("class","cuadro obj");
+							a.style.background="url(img/"+imagen+")";
+							$(a).attr("tipo",tipo);
+							$(a).attr("img",imagen);
+							$("#grupo1").append(a);
+							$(a).draggable({
+								start: function(event,ui){
+									objetoActivo=this;
+									//console.log(objetoActivo);
+								}
+							});
+						}
+						evaluar();
+					}else{
+						//capturamos la ruta
+						var ruta=$(objetoActivo).attr("img")
+						console.log(ruta);
+						//lo removemos del Dom
+						$(objetoActivo).remove();
+						//creamos el objeto
+						var a=document.createElement("div");
+						a.setAttribute("class","cuadro obj");
+						a.style.background="url(img/"+ruta+")";
+						$(a).attr("tipo","n");
+						$(a).attr("img",ruta);
+						$("#grupo1").append(a);
+						$(a).draggable({
+							start: function(event,ui){
+								objetoActivo=this;
+								//console.log(objetoActivo);
+							}
+						});
+
+					}
+				}
+			});
+			//desordenamos el array
+			objetos = objetos.sort(function() {return Math.random() - 0.5});
+			//buscamos los objetos con calse obj
+			var c=$(".obj");
+			//asignamos imagenes y la propiedad draggable
+			for(var i=0;i<c.length;i++){
+				var t=objetos[i];
+				t=t.split("--");
+				var imagen=t[0];
+				var tipo=t[1];
+				$(c[i]).css('background-image', 'url(img/' + imagen + ')');
+				$(c[i]).attr("tipo",tipo);
+				$(c[i]).attr("img",imagen);
+				$(c[i]).draggable({
+					start: function(event,ui){
+						objetoActivo=this;
+						//console.log(objetoActivo);
+					}
+				});
+			}
+		});
+		function evaluar(){
+			var c=$(".obj").length;
+			if(c===0){
+				$("#lienzo2").css("display","none");
+				$("#lienzo3").css("display","block");
+			}
+		}
+	</script>
+</body>
+</html>
