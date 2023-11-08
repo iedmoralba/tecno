@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=5">
+	<title>QuieroConTIC</title>
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+	<script type="text/javascript" src="js/prefixfree.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			box-sizing:border-box; 
+			-moz-box-sizing:border-box; /* Firefox */ 
+			-webkit-box-sizing:border-box; /* Safari */
+		}
+		#lienzo{
+			border: 1px solid red;
+			width: 800px;
+			height: 550px;
+			margin: 0 auto;
+			margin-top: 20px;
+		}
+		#portada{
+			border:1px solid #B2ADAD;
+			box-shadow: 0px 0px 3px 3px #E3DCDC;
+			width: 800px;
+			height: 550px;
+			background-color: #e8a31c;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23eac56c' fill-opacity='0.36' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+		}
+		.pag{
+			border:1px solid #B2ADAD;
+			box-shadow: 0px 0px 3px 3px #E3DCDC;
+			width: 800px;
+			height: 550px;
+			background-color: #e8a31c;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23eac56c' fill-opacity='0.36' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+			padding: 30px;
+			position: relative;
+			display: none;
+		}
+		#autor{
+			margin-top: 200px;
+			font-family: Pacifico;
+			font-size: 50px;
+			width: 800px;
+			text-align: center;
+		}
+		#eslogan{
+			font-family: 'Love Ya Like A Sister', cursive;
+			color:white;
+			font-size: 20px;
+			width: 800px;
+			text-align: center;
+		}
+		#btn_inicio{
+			width: 50px;
+			height: 50px;
+			background: url('img/botonp.png');
+			background-size: 100% 100%;
+			margin: 0 auto;
+			margin-top: 20px;
+			cursor: pointer;
+		}
+		.titulo{;
+			color: white;
+			font-size: 30px;
+		}
+		.desc{
+			font-size: 20px;
+		}
+		#cont_vidas{
+			width: 740px;
+			height: 50px;
+			text-align: right;
+		}
+		.vida{
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			background: url("img/corazon.png");
+			background-size: 100% 100%;
+		}
+		#bien {
+		    width: 350px;
+		    height: 350px;
+		    margin: 0 auto;
+		    background: url(img/bien.png);
+		    background-size: 100% 100%;
+		    margin-top: 30px;
+		}
+		#fin {
+		    display: block;
+		    margin: 0 auto;
+		    width: 350px;
+		    text-align: center;
+		    font-size: 30px;
+		    margin-top: 10px;
+		    font-family: 'Love Ya Like A Sister', cursive;
+		}
+				/* Safari 4.0 - 8.0 */
+		@-webkit-keyframes example {
+		     0% {
+		    	-webkit-transform: scale(1); /* Safari */
+   				 transform: scale(1);
+   			}
+		    50% {
+		    	-webkit-transform: scale(1.5); /* Safari */
+   				 transform: scale(1.5);
+		    }
+		    100% {
+		    	-webkit-transform: scale(1); /* Safari */
+   				 transform: scale(1);
+   			}
+		}
+
+		/* Standard syntax */
+		@keyframes example {
+		    0% {
+		    	-webkit-transform: scale(1); /* Safari */
+   				 transform: scale(1);
+   			}
+		    50% {
+		    	-webkit-transform: scale(1.5); /* Safari */
+   				 transform: scale(1.5);
+		    }
+		    100% {
+		    	-webkit-transform: scale(1); /* Safari */
+   				 transform: scale(1);
+   			}
+		}
+
+		#ejer1{
+			width: 400px;
+			height: 350px;
+			position: relative;
+			margin: 0 auto;
+			display: none;
+		}
+
+		#ejer1 > #imagen1{
+			position: absolute;
+			width: 450px;
+			height: 350px;
+			background-image: url("img/imagen2.png");
+			background-size: 100% 100%;
+		}
+		
+		#ejer1 > #imagen1 > #s1{
+			position: absolute;
+			top: 27px;
+			left: 235px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer1 > #imagen1 > #s2{
+			position: absolute;
+			top: 95px;
+			left: 257px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer1 > #imagen1 > #s3{
+			position: absolute;
+			top: 277px;
+			left: 207px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		/*////////////////////////////////////////*/
+		#ejer2{
+			width: 400px;
+			height: 350px;
+			position: relative;
+			margin: 0 auto;
+			display: none;
+		}
+
+		#ejer2 > #imagen1{
+			position: absolute;
+			width: 450px;
+			height: 350px;
+			background-image: url("img/imagen4.png");
+			background-size: 100% 100%;
+		}
+		#ejer2 > #imagen1 > #s1{
+			position: absolute;
+			top: 27px;
+			left: 235px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer2 > #imagen1 > #s2{
+			position: absolute;
+			top:127px;left:256px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer2 > #imagen1 > #s3{
+			position: absolute;
+			top:247px;left:245px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		
+		/*////////////////////////////////////////*/
+		#ejer3{
+			width: 400px;
+			height: 350px;
+			position: relative;
+			margin: 0 auto;
+			display: none;
+		}
+
+		#ejer3 > #imagen1{
+			position: absolute;
+			width: 450px;
+			height: 350px;
+			background-image: url("img/imagen6.png");
+			background-size: 100% 100%;
+		}
+		#ejer3 > #imagen1 > #s1{
+			position: absolute;
+			top:67px;left:300px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer3 > #imagen1 > #s2{
+			position: absolute;
+			top:154px;left:321px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer3 > #imagen1 > #s3{
+			position: absolute;
+			top:215px;left:289px;
+			font-size: 18px;
+			padding: 5px;
+		}
+
+		/*////////////////////////////////////////*/
+		#ejer4{
+			width: 400px;
+			height: 350px;
+			position: relative;
+			margin: 0 auto;
+			display: none;
+		}
+
+		#ejer4 > #imagen1{
+			position: absolute;
+			width: 450px;
+			height: 350px;
+			background-image: url("img/imagen8.png");
+			background-size: 100% 100%;
+		}
+		#ejer4 > #imagen1 > #s1{
+			position: absolute;
+			top:55px;left:269px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer4 > #imagen1 > #s2{
+			position: absolute;
+			top:171px;left:226px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer4 > #imagen1 > #s3{
+			position: absolute;
+			top:251px;left:237px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		/*////////////////////////////////////////*/
+		#ejer5{
+			width: 400px;
+			height: 350px;
+			position: relative;
+			margin: 0 auto;
+			display: none;
+		}
+
+		#ejer5 > #imagen1{
+			position: absolute;
+			width: 450px;
+			height: 350px;
+			background-image: url("img/imagen9.png");
+			background-size: 100% 100%;
+		}
+		#ejer5 > #imagen1 > #s1{
+			position: absolute;
+			top:35px;left:241px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer5 > #imagen1 > #s2{
+			position: absolute;
+			top:91px;left:214px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer5 > #imagen1 > #s3{
+			position: absolute;
+			top:222px;left:256px;
+			font-size: 18px;
+			padding: 5px;
+		}
+
+		/*////////////////////////////////////////*/
+		#ejer6{
+			width: 400px;
+			height: 350px;
+			position: relative;
+			margin: 0 auto;
+			display: none;
+		}
+
+		#ejer6 > #imagen1{
+			position: absolute;
+			width: 450px;
+			height: 350px;
+			background-image: url("img/imagen10.png");
+			background-size: 100% 100%;
+		}
+		#ejer6 > #imagen1 > #s1{
+			position: absolute;
+			top:215px;left:10px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer6 > #imagen1 > #s2{
+			position: absolute;
+			top:119px;left:352px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer6 > #imagen1 > #s3{
+			position: absolute;
+			top:212px;left:369px;
+			font-size: 18px;
+			padding: 5px;
+		}
+
+		/*////////////////////////////////////////*/
+		#ejer7{
+			width: 400px;
+			height: 350px;
+			position: relative;
+			margin: 0 auto;
+			display: none;
+		}
+
+		#ejer7 > #imagen1{
+			position: absolute;
+			width: 450px;
+			height: 350px;
+			background-image: url("img/imagen11.png");
+			background-size: 100% 100%;
+		}
+		#ejer7 > #imagen1 > #s1{
+			position: absolute;
+			top:56px;left:191px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer7 > #imagen1 > #s2{
+			position: absolute;
+			top:157px;left:292px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer7 > #imagen1 > #s3{
+			position: absolute;
+			top:193px;left:307px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		/*////////////////////////////////////////*/
+		#ejer8{
+			width: 400px;
+			height: 350px;
+			position: relative;
+			margin: 0 auto;
+			display: none;
+		}
+
+		#ejer8 > #imagen1{
+			position: absolute;
+			width: 450px;
+			height: 350px;
+			background-image: url("img/imagen12.png");
+			background-size: 100% 100%;
+		}
+		#ejer8 > #imagen1 > #s1{
+			position: absolute;
+			top:76px;left:193px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer8 > #imagen1 > #s2{
+			position: absolute;
+			top:158px;left:240px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer8 > #imagen1 > #s3{
+			position: absolute;
+			top:232px;left:277px;
+			font-size: 18px;
+			padding: 5px;
+		}
+
+		/*////////////////////////////////////////*/
+		#ejer9{
+			width: 400px;
+			height: 350px;
+			position: relative;
+			margin: 0 auto;
+			display: none;
+		}
+
+		#ejer9 > #imagen1{
+			position: absolute;
+			width: 450px;
+			height: 350px;
+			background-image: url("img/imagen13.png");
+			background-size: 100% 100%;
+		}
+		#ejer9 > #imagen1 > #s1{
+			position: absolute;
+			top:110px;left:306px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer9 > #imagen1 > #s2{
+			position: absolute;
+			top:189px;left:344px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer9 > #imagen1 > #s3{
+			position: absolute;
+			top:255px;left:57px;
+			font-size: 18px;
+			padding: 5px;
+		}
+
+		/*////////////////////////////////////////*/
+		#ejer10{
+			width: 400px;
+			height: 350px;
+			position: relative;
+			margin: 0 auto;
+		}
+
+		#ejer10 > #imagen1{
+			position: absolute;
+			width: 450px;
+			height: 350px;
+			background-image: url("img/imagen14.png");
+			background-size: 100% 100%;
+		}
+		#ejer10 > #imagen1 > #s1{
+			position: absolute;
+			top:103px;left:283px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer10 > #imagen1 > #s2{
+			position: absolute;
+			top:198px;left:302px;
+			font-size: 18px;
+			padding: 5px;
+		}
+		#ejer10 > #imagen1 > #s3{
+			position: absolute;
+			top:286px;left:27px;
+			font-size: 18px;
+			padding: 5px;
+		}
+
+		#evaluar{
+			border: 2px solid #1E8B09;
+			border-radius: 5px;
+			width: 120px;
+			height: 35px;
+			text-align: center;
+			font-size: 18px;
+			position: absolute;
+			top:482px;left:336px;
+			padding: 5px;
+			background-color: #80F269;
+			cursor: pointer;
+		}
+		.ejer{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="lienzo">
+		<!--portada-->
+		<div id="portada">
+			<p id="autor" class="text">QuieroConTIC</p>
+			<p id="eslogan" class="text">"- Palancas -"</p>
+			<div id="btn_inicio"></div>
+		</div>
+		<!--pagina1-->
+		<div id="pag1" class="pag">
+			<div id="cont_vidas">
+				<div class="vida"></div>
+				<div class="vida"></div>
+				<div class="vida"></div>
+			</div>
+			
+			<p class="titulo">Actividad:</p>
+			<p class="desc">Ubica el fulcro, la fuerza y la resistencia en el siguiente objeto.</p>
+			
+			<div id="ejer1" class="ejer">
+				<div id="imagen1">
+					<!--
+					<div class="punto" style="width: 20px; height: 34px; border: 1px solid black;"></div>
+					-->
+					<select name="s1" id="s1">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s2" id="s2">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s3" id="s3">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+				</div>
+			</div>
+
+			<div id="ejer2" class="ejer">
+				<div id="imagen1">
+					<!--
+					<div class="punto" style="width: 20px; height: 34px; border: 1px solid black;"></div>
+				-->
+					<select name="s1" id="s1">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s2" id="s2">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s3" id="s3">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+				</div>
+			</div>
+
+			<div id="ejer3" class="ejer">
+				<div id="imagen1">
+					<!--
+					<div class="punto" style="width: 20px; height: 34px; border: 1px solid black;"></div>
+					-->
+					<select name="s1" id="s1">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s2" id="s2">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s3" id="s3">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+				</div>
+			</div>
+
+			<div id="ejer4" class="ejer">
+				<div id="imagen1">
+					<!--
+					<div class="punto" style="width: 20px; height: 34px; border: 1px solid black;"></div>
+					-->
+					<select name="s1" id="s1">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s2" id="s2">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s3" id="s3">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+				</div>
+			</div>
+
+			<div id="ejer5" class="ejer">
+				<div id="imagen1">
+					<!--
+					<div class="punto" style="width: 20px; height: 34px; border: 1px solid black;"></div>
+					-->
+					<select name="s1" id="s1">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s2" id="s2">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s3" id="s3">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+				</div>
+			</div>
+
+			<div id="ejer6" class="ejer">
+				<div id="imagen1">
+					<!--
+					<div class="punto" style="width: 20px; height: 34px; border: 1px solid black;"></div>
+					-->
+					<select name="s1" id="s1">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s2" id="s2">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s3" id="s3">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+				</div>
+			</div>
+
+			<div id="ejer7" class="ejer">
+				<div id="imagen1">
+					<!--
+					<div class="punto" style="width: 20px; height: 34px; border: 1px solid black;"></div>
+					-->
+					<select name="s1" id="s1">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s2" id="s2">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s3" id="s3">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+				</div>
+			</div>
+
+			<div id="ejer8" class="ejer">
+				<div id="imagen1">
+					<!--
+					<div class="punto" style="width: 20px; height: 34px; border: 1px solid black;"></div>
+					-->
+					<select name="s1" id="s1">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s2" id="s2">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s3" id="s3">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+				</div>
+			</div>
+
+			<div id="ejer9" class="ejer">
+				<div id="imagen1">
+					<!--
+					<div class="punto" style="width: 20px; height: 34px; border: 1px solid black;"></div>
+					-->
+					<select name="s1" id="s1">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s2" id="s2">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s3" id="s3">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+				</div>
+			</div>
+
+			<div id="ejer10" class="ejer">
+				<div id="imagen1">
+					<!--
+					<div class="punto" style="width: 20px; height: 34px; border: 1px solid black;"></div>
+					-->
+					<select name="s1" id="s1">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s2" id="s2">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+					<select name="s3" id="s3">
+						<option value=""></option>
+						<option value="fuerza">Fuerza</option>
+						<option value="fulcro">Fulcro</option>
+						<option value="resistencia">Resistencia</option>
+					</select>
+
+				</div>
+			</div>
+
+			<div id="evaluar">Evaluar</div>
+
+		</div>
+		<!--pagina2-->
+		<div id="pag2" class="pag">
+			<div id="bien"></div>
+			<div id="fin">Actividad Terminada</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/precargas.js"></script>
+	<script type="text/javascript" src="js/scala.js"></script>
+
+	<script type="text/javascript" id="configuracion">
+		/*
+			//Variables de la precarga
+			var b_son=[];
+			var b_vid=[];
+			var b_img=["bien.png","botonp.png","celanimal.png","corazon.png"];
+			//cuando se cargue la pagina
+			function contarElementosCargados(){
+				if(totalAudios===0 && totalImagenes===b_img.length && totalVideos===0){
+					$("#btn_inicio").css("display","block");
+				}
+			}
+			$(document).ready(function(){
+				activarPrecargas();
+			});
+			//Variables para la scala
+			var s_objetos=["portada width:800 height:550",
+			"autor marginTop:200 fontSize:50 width:800",
+			"eslogan fontSize:20 width:800",
+			"btn_inicio width:50 height:50 marginTop:20",
+			"mapa width:361 height:455 marginTop:-60",
+			"cont_vidas width:740 height:50",
+			"p1 top:300 left:25",
+			"p2 top:275 left:55",
+			"p3 top:240 left:65",
+			"p4 top:180 left:50",
+			"p5 top:160 left:100",
+			"p6 top:120 left:80",
+			"p7 top:99 left:106",
+			"p8 top:113 left:128",
+			"p9 top:59 left:120",
+			"p10 top:47 left:103",
+			"p11 top:26 left:169",
+			"p12 top:116 left:164",
+			"p13 top:154 left:151",
+			"p14 top:187 left:163",
+			"p15 top:208 left:132",
+			"p16 top:195 left:97",
+			"p17 top:201 left:77",
+			"p18 top:222 left:87",
+			"p19 top:235 left:103",
+			"p20 top:269 left:95",
+			"p21 top:331 left:93",
+			"p22 top:324 left:140",
+			"p23 top:247 left:168",
+			"p24 top:188 left:209",
+			"p25 top:153 left:225",
+			"p26 top:206 left:278",
+			"p27 top:288 left:195",
+			"p28 top:261 left:291",
+			"p29 top:317 left:240",
+			"p30 top:372 left:216",
+			"p31 top:66 left:150"
+			];
+
+			var s_clases=[".pag width:800 height:550 padding:30",
+			".titulo fontSize:30 marginTop:-50",
+			".desc fontSize:20",
+			".vida width:50 height:50",
+			".punto width:10 height:10"];
+
+			$(window).resize(function(){
+				activarScala();
+			});
+			*/
+		</script>
+
+	<script type="text/javascript">
+
+		var ejer_activ="";
+		var indice=0;
+
+		var partes=[{
+						'nombre':'ejer1',
+						'r1':'resistencia',
+						'r2':'fulcro',
+						'r3':'fuerza'
+					},
+{
+						'nombre':'ejer2',
+						'r1':'resistencia',
+						'r2':'fulcro',
+						'r3':'fuerza'
+					},
+{
+						'nombre':'ejer3',
+						'r1':'fulcro',
+						'r2':'fuerza',
+						'r3':'resistencia'
+					},
+{
+						'nombre':'ejer4',
+						'r1':'resistencia',
+						'r2':'fulcro',
+						'r3':'fuerza'
+					},
+{
+						'nombre':'ejer5',
+						'r1':'fulcro',
+						'r2':'resistencia',
+						'r3':'fuerza'
+					},
+{
+						'nombre':'ejer6',
+						'r1':'fuerza',
+						'r2':'resistencia',
+						'r3':'fulcro'
+					},
+{
+						'nombre':'ejer7',
+						'r1':'fuerza',
+						'r2':'resistencia',
+						'r3':'fulcro'
+					},
+{
+						'nombre':'ejer8',
+						'r1':'fulcro',
+						'r2':'fuerza',
+						'r3':'resistencia'
+					},
+{
+						'nombre':'ejer9',
+						'r1':'fuerza',
+						'r2':'resistencia',
+						'r3':'fulcro'
+					},
+{
+						'nombre':'ejer10',
+						'r1':'fuerza',
+						'r2':'resistencia',
+						'r3':'fulcro'
+					}];
+
+		$(document).ready(function(){
+			programarBotones();
+			//arrastrarPuntos();
+			desordenarpartes();
+			mostrarEjer();
+		});
+		
+		function programarBotones(){
+			//programamos el boton
+			$("#btn_inicio").click(function(){
+				$("#portada").css("display","none");
+				$("#pag1").css("display","block");
+			});
+			$(".punto").click(function(){
+				console.log($(this).attr("id"));
+				respuesta=$(this).attr("d");
+				evaluar();
+			});
+			$("#evaluar").click(function(){
+				var imagen=ejer_activ.querySelector("#imagen1");
+				var r1=imagen.querySelector("#s1").value;
+				var r2=imagen.querySelector("#s2").value;
+				var r3=imagen.querySelector("#s3").value;
+				console.log(r1,r2,r3);
+				var obj=partes[indice];
+				var c1=obj.r1;
+				var c2=obj.r2;
+				var c3=obj.r3;
+				console.log(c1,c2,c3);
+				if(r1===c1 && r2===c2 && r3===c3){
+					console.log("muy bien");
+					setTimeout(function(){
+						$(ejer_activ).css("display","none");
+						mostrarEjer();
+					},1000);
+					indice++;
+					
+				}else{
+					console.log("hay errores");	
+					var vidas=$(".vida");
+					if(vidas.length>1){
+						$(vidas[0]).remove();
+					}else{
+						window.location.reload();
+					}
+					
+				}
+			});
+		}
+
+		function arrastrarPuntos(){
+			$(".punto").draggable({
+				stop: function(){
+					var top=$(this).css("top");
+					var left=$(this).css("left");
+					var id=$(this).attr("id");
+					console.log("#"+id+"{top:"+top+";left:"+left+";}");
+				}
+			});
+		}
+
+		function desordenarpartes(){
+			//desordenamos el array
+			partes =	partes.sort(function() {return Math.random() - 0.5});
+		}
+
+		function mostrarEjer(){
+			if(partes[indice]){
+				var obj=partes[indice];
+				var nombre=obj.nombre;
+				$("#"+nombre).css("display","block");
+				ejer_activ=$("#"+nombre)[0];
+			}else{
+				$("#pag1").css("display","none");
+				$("#pag2").css("display","block");
+			}
+		}
+		
+		/*
+		vidas=3;
+		var indice=0;
+		var solicitud="";
+		var respuesta="";
+		var partes=["Membrana Celular","Microtúbulos","Citoplasma","Vacuola","Lisosoma","Centriolos","Ribosomas","Mitocondria","Aparato de golgi","Reticulo endoplasmatico liso","Reticulo endoplasmatico rugoso","Nucleo","Nucleolo"];
+
+		$(document).ready(function(){
+			//arrastrarPuntos();
+			desordenarpartes();
+			preguntar();
+			programarBotones();
+		});
+		
+		function arrastrarPuntos(){
+			$(".punto").draggable({
+				stop: function(){
+					var top=$(this).css("top");
+					var left=$(this).css("left");
+					var id=$(this).attr("id");
+					console.log("#"+id+"{top:"+top+";left:"+left+";}");
+				}
+			});
+		}
+		
+		function desordenarpartes(){
+			//desordenamos el array
+			partes =	partes.sort(function() {return Math.random() - 0.5});
+		}
+		function programarBotones(){
+			//programamos el boton
+			$("#btn_inicio").click(function(){
+				$("#portada").css("display","none");
+				$("#pag1").css("display","block");
+			});
+			$(".punto").click(function(){
+				console.log($(this).attr("id"));
+				respuesta=$(this).attr("d");
+				evaluar();
+			});
+		}
+		
+		function preguntar(){
+			if(partes[indice]){
+				solicitud=partes[indice];
+				$(".desc").html("Oprime sobre la parte: "+partes[indice]);
+			}else{
+				$("#pag1").css("display","none");
+				$("#pag2").css("display","block");
+			}
+		}
+
+		function evaluar(){
+			console.log(solicitud,respuesta)
+			if(solicitud===respuesta){
+				indice++;
+				console.log("aqui va");
+				preguntar();
+			}else{
+				
+				vidas--;
+				var v=$(".vida")[vidas];
+				$(v).css("display","none");
+				if(vidas<0){
+					alert("Has perdido todas las vidas, No te rindas y vuelve a intentar");
+					location.reload();
+				}
+			}
+		}
+		*/
+	</script>
