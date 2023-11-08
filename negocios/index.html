@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital@1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+-->
+	<title>Comercio</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister');
+		@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+/*
+		@import url('https://fonts.googleapis.com/css?family=Pacifico');
+*/
+		*{border: 0; padding: 0; margin: 0; box-sizing: border-box;}
+		body {
+		    background-color: #EBE7E7;
+		}
+		#app{
+			border: 0px solid white;
+		    width: 800px;
+		    text-align: center;
+		    margin: 0 auto;
+		    margin-top: 70px;
+		    margin-bottom: 70px;
+		    background-color: white;
+		    min-height: 750px;
+		    box-shadow: 0px 0px 2px 2px #DDD7D7;
+		    display: block;
+		    position: relative;
+		}
+		header{
+			width: 100%;
+		}
+		#franja1{
+			width: 100%;
+			background-color: limegreen;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			align-content: flex-start;
+			padding: 20px;
+			padding-left: 25px;
+		}
+		#franja2{
+			width: 100%;
+			height: 25px;
+			background-color: seagreen;
+			padding: 3px;
+			text-align: right;
+			padding-right: 20px;
+			font-family: 'Love Ya Like A Sister';
+			color: white;
+		}
+		#escudo{
+			width: 80px;
+			height: 83px;
+			background-image: url('img/escudo.png');
+			background-size: 100% 100%;
+			margin-right: 10px;
+			filter: drop-shadow(1px 1px 1px dimgray);
+		}
+		#titulo,#titulo2{
+			font-size: 40px;
+			font-family: 'Lilita One';
+			letter-spacing: 1px;
+			color: white;
+			text-shadow: 0px 0px 4px black;
+		}
+		#cuerpo{
+			padding: 60px;
+		}
+		#titulo2{
+			color: black;
+			text-shadow: none;
+		}
+		#opciones{
+			margin-top: 30px;
+			display: flex;
+			justify-content: space-between;
+			padding-bottom: 20px;
+			border-bottom: 1px solid dimgray;
+		}
+		#contbus{
+			border: 0px solid red;
+			width: 340px;
+			height: 30px;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			align-content: center;
+		}
+		#barrabus{
+			display: block;
+			border: 1px solid dimgray;
+			padding: 4px 30px;
+			font-size: 16px;
+			width: 300px;
+			text-align: center;
+			border-radius: 5px;
+			font-family: 'Londrina Solid';
+			letter-spacing: 1px;
+		}
+		#btnbus{
+			width: 35px;
+			margin-left: -25px;
+			margin-top: -5px;
+			aspect-ratio: 1/1;
+			background-image: url('img/lupa.png');
+			background-size: 100% 100%;
+		}
+		#contvis{
+			width: 80px;
+			height: 30px;
+			display: flex;
+			justify-content: space-around;
+		}
+		#verport{
+			width: 30px;
+			aspect-ratio: 1/1;
+			background-image: url('img/iconoport.png');
+			background-size: 100% 100%;
+			cursor: pointer;
+		}
+		#verlist{
+			width: 20px;
+			aspect-ratio: 1/1;
+			background-image: url('img/listport.png');
+			background-size: 100% 100%;
+			cursor: pointer;
+		}
+		#txt1{
+			text-align: left;
+			margin-top: 20px;
+			font-family: 'ABeeZee';
+			font-size: 18px;
+		}
+		#zonatextos{
+			margin-top: 40px;
+			border: 0px solid dimgray;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: flex-start;
+			min-height: 400px;
+		}
+		.conttxt{
+			width: 210px;
+			border: 1px solid dimgray;
+			padding: 10px;
+			margin: 5px;
+			padding-bottom: 30px;
+			cursor: pointer;
+		}
+		.imgtxt{
+			width: 100%;
+			padding: 5px;
+			border-bottom: 1px solid dimgray;
+		}
+		.nombretxt{
+			font-size: 20px;
+			font-family: 'Londrina Solid';
+			letter-spacing: 1px;
+			height: 60px;
+			padding: 0px 5px;
+		}
+		a{
+			list-style: none;
+			text-decoration: none;
+			color: black;
+		}
+		footer{
+			width: 100%;
+			height: 50px;
+			background-color: seagreen;
+			padding: 3px;
+			text-align: right;
+			padding-right: 20px;
+			font-family: 'Love Ya Like A Sister';
+			color: white;
+		}
+		#negocios img{
+			width: 80%;
+			border: 1px solid dimgray;
+			padding: 5px;
+			cursor: pointer;
+		}
+		.nneg{
+			font-size: 25px;
+			font-family: 'Love Ya Like A Sister';
+			margin:5px 0px 5px 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<header>
+			<div id="franja1">
+				<div id="escudo"></div>
+				<div id="titulo">MORALBACOMERCIO</div>
+			</div>
+			<div id="franja2">Tecnología e Informática</div>	
+		</header>
+		<section id="cuerpo">
+			<div id="titulo2">Negocios</div>
+			<p id="txt1">
+				A continuación se mostrarán 5 negocios del barrio Moralba. Selecciona uno de ellos para trabajar llevando la contabilidad de todas las ventas que se efectuan en un día.
+			</p>
+			<div id="negocios">
+				<div class="nneg">Frutas y verduras Cundifrut</div>
+				<a href="n1.html"><img src="img/01.png" alt=""></a>
+				<div class="nneg">AdrianCell</div>
+				<a href="n2.html"><img src="img/02.png" alt=""></a>
+				<div class="nneg">El Caqueseño</div>
+				<img src="img/03.png" alt="">
+				<div class="nneg">Panificadora la Surtidora</div>
+				<img src="img/04.png" alt="">
+				<div class="nneg">Distribuidora Altamira</div>
+				<img src="img/05.png" alt="">
+			</div>
+		</section>
+		<footer></footer>
+	</div>
+	
+	</script>
+	<script type="text/javascript">
+		window.onload=function(){
+			cargarJson('json/data.json');
+			agregarEventosVistas();
+			agregarEventoBuscar();
+		}
+	</script>
+</body>
+</html>
