@@ -1,0 +1,101 @@
+*{padding: 0; border: 0; margin: 0; box-sizing: border-box;}
+#app{position: relative; width: 1024px; height: 576px; margin: 0 auto; user-select: none;}
+.lienzo{border: 1px solid gray; width: 1024px; height: 576px; position: relative; top: 0; bottom: 0; left: 0; right: 0; margin: auto; overflow: hidden; display:none; background-color: white;}
+.lienzo:first-child{display:block;}
+.elemt{font-family: "Roboto Slab";}
+#appname{padding: 5px; position: absolute; width: 1002px; z-index: 100; left: 10px; top: 178px; height: 129px; font-size: 72px; font-family: Pacifico; text-align: center;}
+#appsection{padding: 5px; position: absolute; width: 908px; z-index: 100; left: 10px; top: 273px; height: 64px; text-align: center; font-family: "Roboto Slab"; font-size: 28px; transform: translate(75px, 0px);}
+#btn_play{position: absolute; z-index: 100; left: -386px; top: -531px; width: 106px; height: 85px; transform: translate(861px, 884px);}
+#fondo1{position: absolute; z-index: 99; width: 1021px; height: 574px; transform: translate(0px, 0px);}
+#pendon1{position: absolute; width: 74px; height: 111px; border: 1px solid dimgray; z-index: 99; transform: translate(0px, 12px); left: 17px; top: -13px; background-color: green; opacity: 0.8;}
+#escudo1{position: absolute; z-index: 100; width: 74px; height: 75px; transform: translate(439px, 433px); left: -423px; top: -401px; transform-origin: 52.6667% 43.849%;}
+#marca1{padding: 5px; position: absolute; width: 105px; z-index: 100; left: 24px; top: 535px; height: 29px; font-size: 16px; font-family: Pacifico; text-align: center; transform: translate(883px, 0px); color: rgb(255, 255, 255);}
+#fondoms{position: absolute; z-index: 100; padding: 5px;}
+#coin{position: absolute; z-index: 100; padding: 5px; left: -4px; top: 67px;}
+#mal{position: absolute; z-index: 100; padding: 5px; left: 1px; top: 123px;}
+#completo{position: absolute; z-index: 100; padding: 5px; left: -5px; top: 176px;}
+#fondo2{position: absolute; z-index: 99; width: 1021px; height: 574px; transform: translate(0px, 0px);}
+#icono_tiempo{position: absolute; z-index: 100; left: 558px; top: 58px; width: 64px; height: 63px; transform: translate(0px, 0px);}
+#tiempo{padding: 5px; position: absolute; width: 95px; z-index: 100; left: 543px; top: 115px; height: 25px; text-align: center; font-family: "Roboto Slab"; font-size: 20px;}
+#escudo2{position: absolute; z-index: 100; width: 74px; height: 75px; transform: translate(439px, 433px); left: -422px; top: -401px; transform-origin: 52.6667% 43.849%;}
+#pendon2{position: absolute; width: 74px; height: 111px; border: 1px solid dimgray; z-index: 99; transform: translate(0px, 12px); left: 17px; top: -13px; background-color: green; opacity: 0.8;}
+#marca2{padding: 5px; position: absolute; width: 105px; z-index: 100; left: 24px; top: 535px; height: 29px; font-size: 16px; font-family: Pacifico; text-align: center; transform: translate(883px, 0px); color: rgb(255, 255, 255);}
+#icono_aciertos{position: absolute; z-index: 100; left: 461px; top: 44px; width: 80px; height: 80px; transform: translate(0px, 5px);}
+#aciertos{padding: 5px; position: absolute; width: 95px; z-index: 100; left: 449px; top: 115px; height: 26px; text-align: center; font-family: "Roboto Slab"; font-size: 20px;}
+#fondo3{position: absolute; z-index: 99; width: 1021px; height: 574px; transform: translate(0px, 0px);}
+#pendon3{position: absolute; width: 74px; height: 111px; border: 1px solid dimgray; z-index: 99; transform: translate(0px, 12px); left: 17px; top: -13px; background-color: green; opacity: 0.8;}
+#escudo3{position: absolute; z-index: 100; width: 74px; height: 75px; transform: translate(439px, 433px); left: -422px; top: -401px; transform-origin: 52.6667% 43.849%;}
+#medalla{position: absolute; z-index: 100; left: 293px; top: 92px; width: 280px; height: 279px;}
+#txt1{padding: 5px; position: absolute; width: 379px; z-index: 100; left: 328px; top: 363px; height: 46px; text-align: center; font-size: 48px; font-family: Merriweather;}
+#txt2{padding: 5px; position: absolute; width: 280px; z-index: 100; left: 436px; top: 413px; height: 64px; transform: translate(-57px, 0px); text-align: center; font-size: 20px; font-family: "Roboto Flex";}
+#marca3{padding: 5px; position: absolute; width: 105px; z-index: 100; left: 24px; top: 535px; height: 29px; font-size: 16px; font-family: Pacifico; text-align: center; transform: translate(883px, 0px); color: rgb(255, 255, 255);}
+#icono_aciertos1{position: absolute; z-index: 100; left: 550px; top: 218px; width: 80px; height: 80px;}
+#tiempo1{padding: 5px; position: absolute; width: 95px; z-index: 100; left: 609px; top: 153px; height: 25px; text-align: center; font-family: "Roboto Slab"; font-size: 20px;}
+#icono_tiempo1{position: absolute; z-index: 100; left: 549px; top: 141px; width: 64px; height: 63px;}
+#aciertos2{padding: 5px; position: absolute; width: 95px; z-index: 100; left: 596px; top: 242px; height: 26px; text-align: center; font-family: "Roboto Slab"; font-size: 20px;}
+#recargar_clon0_0{position: absolute; z-index: 100; width: 55px; height: 54px; transform: translate(0px, 0px); left: 495px; top: 477px;}
+#fondo4{position: absolute; z-index: 99; width: 1021px; height: 574px; transform: translate(0px, 0px);}
+#pendon4{position: absolute; width: 74px; height: 111px; border: 1px solid dimgray; z-index: 99; transform: translate(0px, 12px); left: 17px; top: -13px; background-color: green; opacity: 0.8;}
+#escudo4{position: absolute; z-index: 100; width: 74px; height: 75px; transform: translate(439px, 433px); left: -422px; top: -401px; transform-origin: 52.6667% 43.849%;}
+#libros{position: absolute; z-index: 100; width: 213px; height: 224px; left: 321px; top: 127px;}
+#txt3{padding: 5px; position: absolute; width: 379px; z-index: 100; left: 326px; top: 354px; height: 46px; text-align: center; font-size: 48px; font-family: Merriweather;}
+#txt4{padding: 5px; position: absolute; width: 280px; z-index: 100; left: 376px; top: 413px; height: 64px; text-align: center; font-size: 20px; font-family: "Roboto Flex";}
+#marca4{padding: 5px; position: absolute; width: 105px; z-index: 100; left: 24px; top: 535px; height: 29px; font-size: 16px; font-family: Pacifico; text-align: center; transform: translate(883px, 0px); color: rgb(255, 255, 255);}
+#recargar{position: absolute; z-index: 100; width: 55px; height: 54px; transform: translate(0px, 0px); left: 495px; top: 477px;}
+#icono_tiempo2{position: absolute; z-index: 100; left: 547px; top: 156px; width: 64px; height: 63px;}
+#tiempo2{padding: 5px; position: absolute; width: 95px; z-index: 100; left: 615px; top: 169px; height: 25px; text-align: center; font-family: "Roboto Slab"; font-size: 20px;}
+#icono_aciertos2{position: absolute; z-index: 100; left: 548px; top: 235px; width: 80px; height: 80px;}
+#aciertos3{padding: 5px; position: absolute; width: 95px; z-index: 100; left: 594px; top: 260px; height: 26px; text-align: center; font-family: "Roboto Slab"; font-size: 20px;}
+
+#c_monitor{
+			border:1 px solid dimgray;
+			width:100%;
+			height:150px;
+			position:absolute;
+			top:150px; left:0;
+			z-index:100;
+		}
+		#monitor{
+			border:1px solid dimgray;
+			width:800px;
+			height:100%;
+			margin:0 auto;
+			display:flex;
+			justify-content:center;
+			align-items: center;
+			font-size: 80px;
+			letter-spacing: 0.2em;
+			border-radius: 10px;
+			font-family: "Roboto Slab";
+		}
+		#c_resp{
+			border:1 px solid dimgray;
+			width:100%;
+			height:150px;
+			position:absolute;
+			top:320px; left:0;
+			display: flex;
+			justify-content: center;
+			gap:20px;
+			z-index:100;
+		}
+		.res{
+			border:1px solid dimgray;
+			width:150px;
+			aspect-ratio: 1/1;
+			display:flex;
+			justify-content:center;
+			align-items: center;
+			font-size: 80px;
+			border-radius: 10px;
+			cursor: pointer;
+			font-family: "Roboto Slab";
+		}
+		.res:hover{
+			background-color: #F99339;
+		}
+
+		.bounceIn{
+			animation:bounceIn;
+			animation-duration: 0.5s;
+		}

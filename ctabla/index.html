@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="files/icono.svg" />
+    <title>QuieroConTic</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/fuentes.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+</head>
+
+<body>
+    <div id="mfs">
+        <div id="app">
+            <div id="lienzos">
+                <!--<div class="lienzo"></div>-->
+                <div class="lienzo" id="lienzo1">
+                    <div class="elem elemt" id="appname">QuieroConTic</div>
+                    <div class="elem elemt" id="appsection">- Tablas de multiplicar -</div>
+                    <img src="files/03.btn_play.svg" class="elem" id="btn_play"><img src="files/fondo1.jpg" class="elem fondo" id="fondo1">
+                    <div id="pendon1" class="elem cont pendon"></div>
+                    <img src="files/escudo.png" class="elem escudo" id="escudo1">
+                    <div class="elem elemt marca" id="marca1">QuieroConTic</div>
+                    <audio src="files/fondo1.mp3" class="elem" id="fondoms" preload="auto" loop></audio>
+                    <audio src="files/coin.mp3" class="elem" id="coin" preload="auto"></audio>
+                    <audio src="files/bad.mp3" class="elem" id="mal" preload="auto"></audio>
+                    <audio src="files/finsesion.mp3" class="elem" id="completo" preload="auto"></audio>
+                </div>
+                <div class="lienzo" id="lienzo2">
+                    <img src="files/fondo1.jpg" class="elem1 fondo" id="fondo2"><img src="files/tiempo.png" class="elem1 icono_tiempo" id="icono_tiempo">
+                    <div class="elem1 elemt tiempo" id="tiempo">00:00:00</div>
+                    <img src="files/escudo.png" class="elem1 escudo" id="escudo2">
+                    <div id="pendon2" class="elem1 cont pendon"></div>
+                    <div class="elem1 elemt marca" id="marca2">QuieroConTic</div>
+                    <img src="files/aciertos.png" class="elem1 icono_aciertos" id="icono_aciertos">
+                    <div class="elem1 elemt aciertos" id="aciertos">0</div>
+                    <div id="c_monitor">
+                        <div id="monitor">7x8</div>
+                    </div>
+                    <div id="c_resp">
+                        <div class="res">12</div>
+                        <div class="res">8</div>
+                        <div class="res">24</div>
+                        <div class="res">8</div>
+                    </div>
+                </div>
+                <div class="lienzo" id="lienzo3">
+                    <img src="files/fondo1.jpg" class="elem1 fondo" id="fondo3">
+                    <div id="pendon3" class="elem1 cont pendon"></div>
+                    <img src="files/escudo.png" class="elem1 escudo" id="escudo3">
+                    <img src="files/medalla (1).png" class="elem1" id="medalla">
+                    <div class="elem1 elemt" id="txt1">¡Felicitaciones!</div>
+                    <div class="elem1 elemt" id="txt2">Has clasificado para la siguiente etapa.</div>
+                    <div class="elem1 elemt marca" id="marca3">QuieroConTic</div>
+                    <img src="files/aciertos.png" class="elem1 icono_aciertos" id="icono_aciertos1">
+                    <div class="elem1 elemt tiempo" id="tiempo1">00:00:00</div>
+                    <img src="files/tiempo.png" class="elem1 icono_tiempo" id="icono_tiempo1">
+                    <div class="elem1 elemt aciertos" id="aciertos2">0</div>
+                </div>
+                <div class="lienzo" id="lienzo4">
+                    <img src="files/fondo1.jpg" class="elem1 fondo" id="fondo4">
+                    <div id="pendon4" class="elem1 cont pendon"></div>
+                    <img src="files/escudo.png" class="elem1 escudo" id="escudo4">
+                    <img src="files/educacion.png" class="elem1" id="libros">
+                    <div class="elem1 elemt" id="txt3">¡Buen intento!</div>
+                    <div class="elem1 elemt" id="txt4">Sigue practicando para estar entres los mejores.</div>
+                    <div class="elem1 elemt marca" id="marca4">QuieroConTic</div>
+                    <img src="files/recargar.png" class="elem1" id="recargar">
+                    <img src="files/tiempo.png" class="elem1 icono_tiempo" id="icono_tiempo2">
+                    <div class="elem1 elemt tiempo" id="tiempo2">00:00:00</div>
+                    <img src="files/aciertos.png" class="elem1 icono_aciertos" id="icono_aciertos2">
+                    <div class="elem1 elemt aciertos" id="aciertos3">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/code.js"></script>
+    <script type="text/javascript" src="js/codeFs.js"></script>
+    <script type="text/javascript" src="js/scaleCenter.js"></script>
+    <script type="text/javascript" src="js/precarga.js"></script>
+    <script type="text/javascript" src="js/timer.js"></script>
+</body>
+
+</html>
