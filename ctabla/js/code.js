@@ -50,7 +50,7 @@ let play = true;
 let limite = 20;
 let indice_limite = 0;
 
-let banco_imagenes = ['files/03.btn_play.svg', 'files/fondo1.jpg', 'files/escudo.png', 'files/tiempo.png', 'files/aciertos.png', 'files/medalla (1).png', 'files/educacion.png', 'files/recargar.png'];
+let banco_imagenes = ['files/03.btn_play.svg', 'files/tiempo.png', 'files/aciertos.png', 'files/medalla (1).png', 'files/educacion.png', 'files/recargar.png'];
 let banco_sonidos = ['files/fondo1.mp3', 'files/coin.mp3', 'files/bad.mp3', 'files/finsesion.mp3'];
 let banco_videos = [];
 let lienzoActivo = 0;
