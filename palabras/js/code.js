@@ -55,6 +55,7 @@ let coin = document.getElementById('coin');
 let mal = document.getElementById('mal');
 let completo = document.getElementById('completo');
 let loading = document.getElementById('loading');
+let click = document.getElementById('click');
 //////
 let consonantes=['B','C','D','F','G','H','J','K','L','LL','M','N','P','Q','R','S','T','V','W','X','Y','Z'];
 let vocales=['A','E','I','O','U'];
@@ -69,7 +70,7 @@ let play=true;
 let img_activa;
 /////
 let banco_imagenes =['files/03.btn_play.svg','files/fondo1.jpg','files/escudo.png','files/fondo1c.jpg','files/casa.png','files/caja.png','files/cama.png','files/gata.png','files/hada.png','files/lata.png','files/masa.png','files/pala.png','files/sala.png','files/sapa.png','files/vaca.png','files/llama2.png','files/medalla (1).png','files/recargar.png'];
-let banco_sonidos = ['files/fondo1.mp3','files/coin.mp3','files/bad.mp3','files/finsesion.mp3'];
+let banco_sonidos = ['files/fondo1.mp3','files/coin.mp3','files/bad.mp3','files/finsesion.mp3','files/click.mp3'];
 let banco_videos =  [];
 let lienzoActivo = 0;
 let varonload=false;
@@ -80,6 +81,7 @@ function revisarLoad(){if(varonload===true && varmain===true){console.log("Todo 
 function iniciar(){
 	loading.style.display="none";
 	btn_play.style.display="block";
+	fondoms.volume=0.5;
 	agregarEventos();
 	ocultarImagenes();
 
@@ -103,6 +105,7 @@ function agregarEventos(){
 	silabas.forEach(function(item){
 				item.addEventListener('click',function(){
 					if(play){
+						reproducirSonido(click);
 						let txt=this.textContent;
 						console.log(txt)
 						//let puesto=false;
@@ -241,4 +244,7 @@ function animarCombinaciones(){
 function reproducirSonido(sound){
 	let nsound = sound.cloneNode(true);
 	nsound.play();
+	if(sound.id==='fondoms'){
+		nsound.volume=0.2;
+	}
 }
