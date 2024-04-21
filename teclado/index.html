@@ -1,373 +1,44 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Teclado</title>
-	<link rel="stylesheet" href="css/animate.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<style type="text/css">
-		*{
-			margin:0;
-			padding:0;
-			box-sizing:border-box; 
-			-moz-box-sizing:border-box; /* Firefox */ 
-			-webkit-box-sizing:border-box; /* Safari */
-		}
-		#lienzo{
-			width: 800px;
-			min-height: 800px;
-			border: 2px solid #E4E2E2;
-			margin: 0 auto;
-			padding: 50px;
-			margin-top: 20px;
-			margin-bottom: 20px;
-			border-radius: 10px;
-			box-shadow: 0px 0px 2px 2px #F3F2F2;
-		}
-		h1{
-			margin-bottom: 30px;
-		}
-		h2{
-			margin-top: 10px;
-		}
-		h3{
-			color: red;
-		}
-		p{
-			margin-bottom: 10px;
-			margin-top: 10px;
-			font-size: 20px;
-		}
-		#teclado{
-			width: 706px;
-			height: 212px;
-			background-image: url("img/tecladofull.png");
-			background-size: 100% 100%;
-			position: relative;
-		}
-		#corazones{
-			text-align: right;
-			font-size: 20px;
-			color: red;
-		}
-		#barra{
-			width: 1%;
-			height: 10px;
-			background-color: #94EA6A;
-			margin-top: 5px;
-			border-radius: 5px;
-		}
-		#tfuncion{
-			/*border: 1px solid black;*/
-			border-radius: 5px;
-			width: 385px;
-			height: 28px;
-			position: absolute;
-			cursor: pointer;
-		}
-		#tnumerico{
-			/*border: 1px solid black;*/
-			border-radius: 5px;
-			width: 120px;
-			height: 145px;
-			position: absolute;
-			cursor: pointer;
-		}
-		#tdireccion{
-			/*border: 1px solid black;*/
-			border-radius: 5px;
-			width: 90px;
-			height: 60px;
-			position: absolute;
-			cursor: pointer;
-		}
-		#tedicion{
-			/*border: 1px solid black;*/
-			border-radius: 5px;
-			width: 90px;
-			height: 100px;
-			position: absolute;
-			cursor: pointer;
-		}
-		#talfan{
-			/*border: 1px solid black;*/
-			border-radius: 5px;
-			width: 430px;
-			height: 140px;
-			position: absolute;
-			cursor: pointer;
-		}
-		#tsis1{
-			/*border: 1px solid black;*/
-			border-radius: 5px;
-			width: 30px;
-			height: 30px;
-			position: absolute;
-			cursor: pointer;
-		}
-		#tsis2{
-			/*border: 1px solid black;*/
-			border-radius: 5px;
-			width: 50px;
-			height: 30px;
-			position: absolute;
-			cursor: pointer;
-		}
-		#tsis3{
-			/*border: 1px solid black;*/
-			border-radius: 5px;
-			width: 125px;
-			height: 30px;
-			position: absolute;
-			cursor: pointer;
-		}
-		#tsis4{
-			/*border: 1px solid black;*/
-			border-radius: 5px;
-			width: 165px;
-			height: 30px;
-			position: absolute;
-			cursor: pointer;
-		}
-		#tsis5{
-			/*border: 1px solid black;*/
-			border-radius: 5px;
-			width: 50px;
-			height: 58px;
-			position: absolute;
-			cursor: pointer;
-		}
-		#tsis6{
-			/*border: 1px solid black;*/
-			border-radius: 5px;
-			width: 30px;
-			height: 30px;
-			position: absolute;
-			cursor: pointer;
-		}
-		#tfuncion{top:12px;left:55px;}
-		#tnumerico{top:53px;left:577px;}
-		#tdireccion{top:137px;left:464px;}
-		#tedicion{top:11px;left:463px;}
-		#talfan{top:53px;left:12px;}
-
-		#tsis1{top:11px;left:13px;}
-		#tsis2{top:109px;left:14px;}
-		#tsis3{top:166px;left:14px;}
-		#tsis4{top:166px;left:275px;}
-		#tsis5{top:80px;left:392px;}
-		#tsis6{top:53px;left:577px;}
-		
-	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moveable/0.42.2/moveable.min.js"></script>
+	<link rel="stylesheet" href="css/estilos.css">
+	<title>QuieroConTic</title>
 </head>
 <body>
-	<div id="lienzo">
-
-		<h1>El teclado</h1>
-		<div id="g1">
-			<h2>Actividad:</h2>
-			<p>
-				Observa cuál es la zona del teclado que te preguntan y oprime sobre ella. Solo tienes una oportunidad.
-			</p>
-			<h3>Pregunta:</h3>
-			<p id="pregunta">
-				¿Cuales son las teclas numericas?
-			</p>
-			<div id="corazones">♥</div>
-			<div id="teclado">
-				<div id="tfuncion" class="teclas"></div>
-				<div id="tnumerico" class="teclas"></div>
-				<div id="tdireccion" class="teclas"></div>
-				<div id="tedicion" class="teclas"></div>
-				<div id="talfan" class="teclas"></div>
-				<div id="tsis1" class="teclas sistema"></div>
-				<div id="tsis2" class="teclas sistema"></div>
-				<div id="tsis3" class="teclas sistema"></div>
-				<div id="tsis4" class="teclas sistema"></div>
-				<div id="tsis5" class="teclas sistema"></div>
-				<div id="tsis6" class="teclas sistema"></div>
+	<div id="mfs"><div id="app" style="position: absolute; left: 0%; top: 0%; transform: scale(1.05382); transform-origin: 0% 0%; margin-left: 17.9444px; margin-top: 0px;">
+			<div id="lienzos">
+				<div class="lienzo" id="lienzo1">
+					<div id="txt1" class="">Actividad:</div>
+				    <div id="desc" class="" style="
+    z-index: 101;
+">
+				    	Arrastra las palabras a los espacios para indicar el nombre de cada una de la partes de la imagen.
+				    </div>
+				    <div id="btn_evaluar">Evaluar</div>
+				<img id="pcp6hwvd56ha" class="img" src="files/teclado.svg" style="z-index: 100; width: 804px; height: 391px; left: 116.718px; top: 55.9868px;"><img id="pn38ntnkakfl" class="img" src="files/p1.svg" style="z-index: 100; left: 291.366px; top: 461.613px;"><img id="pd01svzpi68i" class="img" src="files/p2.svg" style="z-index: 100; left: 291.366px; top: 508.613px;"><img id="p9rtcltnop9f" class="img" src="files/p3.svg" style="z-index: 100; left: 540.366px; top: 461.613px;"><img id="pxik8uy9dvu" class="img" src="files/p4.svg" style="z-index: 100; left: 540.366px; top: 508.613px;"><div id="p41saud2q4hq_padre" class="padre" style="left: 327.381px; top: 460.23px; width: 185px; height: 34px;"></div><div id="pblw7dfz14p9_padre" class="padre" style="left: 327.381px; top: 506.728px; width: 185px; height: 34px;"></div><div id="p2s4httn9lcr_padre" class="padre" style="left: 575.051px; top: 458.332px; width: 185px; height: 34px;"></div><div id="plu1r5ridycr_padre" class="padre" style="left: 575.051px; top: 506.728px; width: 185px; height: 34px;"></div><div id="p41saud2q4hq_hijo" class="elem word" style="left: 716.441px; top: 111.025px; width: 185px; height: 34px;">Teclas de función</div><div id="pblw7dfz14p9_hijo" class="elem word" style="left: 527.604px; top: 111.025px; width: 185px; height: 34px;">Teclas alfanuméricas</div><div id="p2s4httn9lcr_hijo" class="elem word" style="left: 337.819px; top: 110.076px; width: 185px; height: 34px;">Teclas de control</div><div id="plu1r5ridycr_hijo" class="elem word" style="left: 147.084px; top: 110.076px; width: 185px; height: 34px;">Teclas numéricas</div></div>				
 			</div>
-			<div id="barra"></div>
-		</div>
-	</div>
-
-	<script type="text/javascript" id="codigo_animate">
-		$.fn.extend({
-		  animateCss: function(animationName, callback) {
-		    var animationEnd = (function(el) {
-		      var animations = {
-		        animation: 'animationend',
-		        OAnimation: 'oAnimationEnd',
-		        MozAnimation: 'mozAnimationEnd',
-		        WebkitAnimation: 'webkitAnimationEnd',
-		      };
-
-		      for (var t in animations) {
-		        if (el.style[t] !== undefined) {
-		          return animations[t];
-		        }
-		      }
-		    })(document.createElement('div'));
-
-		    this.addClass('animated ' + animationName).one(animationEnd, function() {
-		      $(this).removeClass('animated ' + animationName);
-
-		      if (typeof callback === 'function') callback();
-		    });
-
-		    return this;
-		  },
-		});
-		/*
-			$('#yourElement').animateCss('bounce');
-			or;
-			$('#yourElement').animateCss('bounce', function() {
-			  // Do somthing after animation
-			});
-
-			#yourElement {
-			  -vendor-animation-duration: 3s;
-			  -vendor-animation-delay: 2s;
-			  -vendor-animation-iteration-count: infinite;
-			}
-		*/
-	</script>
-
-	<script type="text/javascript">
-		
-		var indice=0;
-		var p_activa;
-		var activo=true;
-		var bpreguntas=[
-		'¿Cuáles son las teclas numericas?:1',
-		'¿Cuáles son las teclas de función?:5',
-		'¿Cuáles son las teclas de dirección?:2',
-		'¿Cuales son las teclas alfanumericas?:4',
-		'¿Cuales son las teclas del sistema?:6',
-		'¿Cuales son las teclas de edición?:3'];
-
-		bpreguntas = bpreguntas.sort(function() {return Math.random() - 0.5});
-
-		$(document).ready(function(){
-			//arrastrarPuntos();
-			preguntar();
-			activarFunciones();
-		});
-
-		function arrastrarPuntos(){
-			$(".teclas").draggable({
-				stop: function(){
-					var top=$(this).css("top");
-					var left=$(this).css("left");
-					var id=$(this).attr("id");
-					console.log("#"+id+"{top:"+top+";left:"+left+";}");
-				}
-			});
-		}
-
-		function preguntar(){
-			var p=bpreguntas[indice];
-			var t=p.split(":");
-			$("#pregunta").html(t[0]);
-			p_activa=t[1];
-			$('#pregunta').animateCss('shake');
-		}
-
-		function activarFunciones(){
-			//teclas de funcion
-			$("#tfuncion").hover( function(){
-				$(this).css('background-color','#F1D574');
-				$(this).css('opacity','0.5');
-			}, function(){
-				$(this).css('background-color','initial');
-			});
-
-			$("#tfuncion").click(function(){
-				evaluar('5');
-			});
-
-			//teclas numericas
-			$("#tnumerico").hover( function(){
-				$(this).css('background-color','#F1D574');
-				$(this).css('opacity','0.5');
-			}, function(){
-				$(this).css('background-color','initial');
-			});
-
-			$("#tnumerico").click(function(){
-				evaluar('1');
-			});
-
-			//teclas direccion
-			$("#tdireccion").hover( function(){
-				$(this).css('background-color','#F1D574');
-				$(this).css('opacity','0.5');
-			}, function(){
-				$(this).css('background-color','initial');
-			});
-
-			$("#tdireccion").click(function(){
-				evaluar('2');
-			});
-
-			//teclas edicion
-			$("#tedicion").hover( function(){
-				$(this).css('background-color','#F1D574');
-				$(this).css('opacity','0.5');
-			}, function(){
-				$(this).css('background-color','initial');
-			});
-
-			$("#tedicion").click(function(){
-				evaluar('3');
-			});
-
-			//teclas alfanumerico
-			$("#talfan").hover( function(){
-				$(this).css('background-color','#F1D574');
-				$(this).css('opacity','0.5');
-			}, function(){
-				$(this).css('background-color','initial');
-			});
-
-			$("#talfan").click(function(){
-				evaluar('4');
-			});
-
-			//teclas del sistema
-			$(".sistema").hover( function(){
-				$(".sistema").css('background-color','#F1D574');
-				$(".sistema").css('opacity','0.5');
-			}, function(){
-				$(".sistema").css('background-color','initial');
-			});
-
-			$(".sistema").click(function(){
-				evaluar('6');
-			});
-		}
-
-		function evaluar(numero){
-			if(indice<5){
-				if(numero===p_activa){
-					console.log("iguales");
-					indice++;
-					$("#barra").css("width",(16.6*indice)+'%');
-					preguntar();
-				}else{
-					window.location.assign("teclado1.html");
-				}
-			}else{
-				if(activo){
-					indice++;
-					$("#barra").css("width",(16.6*indice)+'%');
-					setTimeout(function(){alert("¡Felicitaciones, actividad terminada.!")},1000);
-					activo=false;
-				}
-			}
-		}
-	</script>
-
+			<div id="inicial" style="display: block;">
+				<div class="vidrio"></div>
+				<img id="imgi" src="files/imginicial.png">
+				<img id="btn_play" src="files/btn.svg">
+				<div id="loading">Loading...</div>
+			</div>
+			<div id="resultado">
+				<div class="vidrio"></div>
+				<img id="imgf" src="files/imgfinal.png">
+				<div id="valor">0/0</div>
+			</div>
+		</div></div>
+	<script type="text/javascript" src="js/varsystem.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
+	<script type="text/javascript" src="js/moveable.js"></script>
+	<script type="text/javascript" src="js/codeFs.js"></script>
+	<script type="text/javascript" src="js/scaleCenter.js"></script>
+	<script type="text/javascript" src="js/precarga.js"></script>
 </body>
 </html>
+		

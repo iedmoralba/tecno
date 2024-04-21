@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+*{padding: 0; border: 0; margin: 0; box-sizing: border-box;}
+#app{position: relative; width: 1024px; height: 576px; margin: 0 auto; user-select: none;}
+.lienzo{border: 1px solid gray; width: 1024px; height: 576px; position: relative; top: 0; bottom: 0; left: 0; right: 0; margin: auto; overflow: hidden; /*display:none;*/ background-color: white;}
+.lienzo:first-child{display:block;}
+.elem{position: absolute; top:0px; left: 0px;}
+.word,.padre{position: absolute; top:0px; left: 0px; border:2px solid black; padding: 5px; border-radius: 5px; z-index: 101; display: flex; justify-content: center; align-items: center; text-align: center; font-family: "Roboto Slab";}
+.vidrio{width: 100%; height: 100%; background: dimgray; opacity: 0.8; position: absolute; top: 0px; left: 0px;}
+#txt1{position: absolute; top:0px; left: 0px; font-family: "Roboto Slab"; font-size: 22px; font-weight: bold; color:red; padding: 5px; top:28px; left: 28px;}
+#desc{position: absolute; top:0px; left: 0px; font-family: "Roboto Slab"; font-size: 18px; padding: 5px; top:57px; left: 28px;}
+#btn_evaluar{border:1px solid #219C08; width: 100px; height: 40px; text-align: center; position: absolute; bottom: 10px; right: -1px; display: flex; justify-content: center; align-items: center; font-family: "Roboto Slab"; font-weight: bold; cursor: pointer; background-color: #39D61A; color:white; text-shadow: 1px 1px 2px black; border-radius:5px 0px 0px 5px;}
+#inicial{position: absolute; top:0px; left: 0px; z-index: 105; width: 100%; height: 100%;}
+#imgi{position: absolute; top:0px; left: 229px; top: 99px;}
+#btn_play{display:none; background:white; border-radius:50%; padding:2px; position: absolute; top:322px; left: 460px; width: 116px; cursor: pointer;}
+#loading{position: absolute; top: 317px; left: 261px; font-family: "Roboto Slab"; font-size: 22px; font-style: italic; color:white; text-align: center; width: 531px;}
+#resultado{display: none; position: absolute; top:0px; left: 0px; z-index: 105; width: 100%; height: 100%;}
+#imgf{position: absolute; top:0px; left: 229px; top: 99px;}
+#valor{font-size: 60px; font-weight: bold; color:white; text-align: center; position: absolute; top:255px; left: 643px; font-family: "Roboto Slab";}
+#imgbase{position: absolute; top:0px; left: 0px;}
+.img{position: absolute; top:0px; left: 0px;}
