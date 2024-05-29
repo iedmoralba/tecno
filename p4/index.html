@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="files/app/icono.svg" />
+        <title>QuieroConTic</title>
+        <link rel="stylesheet" href="css/estilos.css" />
+        <link rel="stylesheet" href="css/fuentes.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+        <script type="text/javascript" src="js/anim.js"></script>
+    </head>
+    <body>
+        <div id="mfs">
+            <div id="app">
+                <div id="lienzos">
+                    <!--<div class="lienzo"></div>-->
+                    <div class="lienzo" id="lienzo1">
+                        <img src="files/app/fondo.svg" class="elem fondo" id="fondo1" oculto="false" /><img src="files/app/escudo.png" class="elem escudo" id="escudo" />
+                        <div class="elem elemt" id="titulo">Iniciación a la lectura</div>
+                        <img src="files/app/libro1.png" class="elem" id="iconoapp" />
+                        <img src="files/app/pendon2.png" class="elem pendon" id="pendon" />
+                        <div class="elem elemt" id="colegio">Colegio Moralba Sur Oriental</div>
+                        <div class="elem elemt marca" id="marca">QuieroConTic</div>
+                        <div class="elem elemt" id="loading" oculto="false">Loading...</div>
+                        <img src="files/app/03.btn_play.svg" class="elem" id="btnPlay" />
+                        <div id="bgaudios">
+                            <audio src="files/app/fondo.mp3" class="elem" id="fondoms" preload="auto" loop></audio>
+                            <audio src="files/app/coin.mp3" class="elem" id="coin" preload="auto"></audio>
+                            <audio src="files/app/bad.mp3" class="elem" id="mal" preload="auto"></audio>
+                            <audio src="files/app/finsesion.mp3" class="elem" id="completo" preload="auto"></audio>
+                             <audio src="files/app/click.mp3" class="elem" id="click" preload="auto"></audio>
+                        </div>
+                    </div>
+
+                    <div class="lienzo" id="lienzo2">
+                        <img src="files/app/fondo.svg" class="elem1 fondo" id="fondo2" />
+                        <img src="files/app/pendon2.png" class="elem1 pendon" id="pendon2" />
+                        <img src="files/app/escudo.png" class="elem1 escudo" id="escudo2" />
+                        <img src="files/app/mniveles.png" class="elem1" id="tniveles" />
+                        <img src="files/app/n1.png" class="elem1 nivel" id="n1" />
+                        <img src="files/app/n2.png" class="elem1 nivel" id="n2" />
+                        <img src="files/app/n3.png" class="elem1 nivel" id="n3" />
+                        <img src="files/app/n4.png" class="elem1 nivel" id="n4" />
+                        <img src="files/app/n5.png" class="elem1 nivel" id="n5" />
+                        <img src="files/app/n6.png" class="elem1 nivel" id="n6" />
+                        <img src="files/app/n7.png" class="elem1 nivel" id="n7" />
+                        <img src="files/app/n8.png" class="elem1 nivel" id="n8" />
+                        <img src="files/app/n9.png" class="elem1 nivel" id="n9" />
+                        <img src="files/app/n10.png" class="elem1 nivel" id="n10" />
+                        <div class="elem1 elemt marca" id="marca2">QuieroConTic</div>
+                        <img src="files/app/bloqueo.png" class="elem1 bloq" id="b1" oculto="false" />
+                        <img src="files/app/bloqueo.png" class="elem1 bloq" id="b2" oculto="false" />
+                        <img src="files/app/bloqueo.png" class="elem1 bloq" id="b3" oculto="false" />
+                        <img src="files/app/bloqueo.png" class="elem1 bloq" id="b4" oculto="false" />
+                        <img src="files/app/bloqueo.png" class="elem1 bloq" id="b5" oculto="false" />
+                        <img src="files/app/bloqueo.png" class="elem1 bloq" id="b6" oculto="false" />
+                        <img src="files/app/bloqueo.png" class="elem1 bloq" id="b7" oculto="false" />
+                        <img src="files/app/bloqueo.png" class="elem1 bloq" id="b8" oculto="false" />
+                        <img src="files/app/bloqueo.png" class="elem1 bloq" id="b9" oculto="false" />
+                    </div>
+                    <div class="lienzo" id="lienzo3">
+                        <img src="files/app/fondo.svg" class="fondo" id="fondo3" />
+                        <img src="files/app/pendon2.png" class="elem1 pendon" id="pendon3" />
+                        <img src="files/app/escudo.png" class="elem1 escudo" id="escudo3" />
+                        <div class="elem1 elemt marca" id="marca3">QuieroConTic</div>
+                        <div id="r0" class="elem1 cont res"></div>
+                        <div id="r1" class="elem1 cont res"></div>
+                        <div id="r3" class="elem1 cont res"></div>
+                        <div id="r4" class="elem1 cont res"></div>
+                        <div id="sil0" class="elem1 cont sil">MA</div>
+                        <div id="sil1" class="elem1 cont sil">MA</div>
+                        <div id="sil2" class="elem1 cont sil">MA</div>
+                        <div id="sil3" class="elem1 cont sil">MA</div>
+                        <div id="sil4" class="elem1 cont sil">MA</div>
+                        <div id="sil5" class="elem1 cont sil">MA</div>
+                        <div id="sil6" class="elem1 cont sil">MA</div>
+                        <div id="sil7" class="elem1 cont sil">MA</div>
+                        <div id="cont_imgs" class="elem1 cont"></div>
+                        <img src="files/app/03.btn_play.svg" class="elem1 leer" id="btnRead" />
+                        <img src="files/app/home.png" class="elem1" id="btnHome" />
+                        <img src="files/app/mayus.png" class="elem1" id="btnMay" />
+                        <img src="files/app/pantalla.svg" class="elem1" id="marco" />
+                        <div class="elem elemt" id="loading2" oculto="false">Loading...</div>
+                        <!--<img src="files/app/gata.png" class="elem1" id="file_mu6vryvzt0f" oculto="false">-->
+                        <img src="files/app/03.btn_play.svg" class="elem1 leer" id="btnRead2" />
+                    </div>
+
+                    <div class="lienzo" id="lienzo4">
+                        <img src="files/app/pendon2.png" class="elem1 pendon" id="pendon4" />
+                        <img src="files/app/escudo.png" class="elem1 escudo" id="escudo4" />
+                        <div class="elem1 elemt marca" id="marca4">QuieroConTic</div>
+                        <img src="files/app/fondof.jpg" class="elem1" id="fondo4" />
+                        <img src="files/app/medalla.png" class="elem1" id="medallap" />
+                        <div class="elem1 elemt" id="txtf">¡Felicitaciones!</div>
+                        <div class="elem1 elemt" id="txtd">Todos los ejercicios superados</div>
+                        <img src="files/app/03.btn_play.svg" class="elem1" id="btnCont" />
+                    </div>
+                    <div class="lienzo" id="lienzo5">
+                        <img src="files/app/fondo.svg" class="fondo elem1" id="fondo5" oculto="false" fijado="false" />
+                        <img src="files/app/pendon2.png" class="elem1 pendon" id="pendon5" />
+                        <img src="files/app/escudo.png" class="elem1 escudo" id="escudo5" />
+                        <div class="elem1 elemt marca" id="marca5">QuieroConTic</div>
+                        <div class="elem1 elemt" id="tituloexp">Iniciación a la lectura</div>
+                        <div class="elem1 elemt" id="txt2">Acerca de la metodología</div>
+                        <div id="marcoVid" class="elem1 cont"></div>
+                        <div class="elem1 elemt" id="btnReg">- Regresar -</div>
+                    </div>
+                    <div class="lienzo" id="lienzo6">
+                        <img src="files/app/fondo.svg" class="fondo elem1" id="fondo6" oculto="false" fijado="false" />
+                        <img src="files/app/pendon2.png" class="elem1 pendon" id="pendon6" />
+                        <img src="files/app/escudo.png" class="elem1 escudo" id="escudo6" />
+                        <div class="elem1 elemt marca" id="marca6">QuieroConTic</div>
+                        <div class="elem1 elemt" id="tituloexp_clon0_0">Derechos de autor</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/code.js"></script>
+        <script type="text/javascript" src="js/codeFs.js"></script>
+        <script type="text/javascript" src="js/scaleCenter.js"></script>
+        <script type="text/javascript" src="js/precarga.js"></script>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+*{padding: 0; border: 0; margin: 0; box-sizing: border-box;}
+#app{position: relative; width: 1024px; height: 576px; margin: 0 auto; user-select: none;}
+.lienzo{border: 1px solid gray; width: 1024px; height: 576px; position: relative; top: 0; bottom: 0; left: 0; right: 0; margin: auto; overflow: hidden; display:none; background-color: white;}
+.lienzo:first-child{display:block;}
+.elemt{font-family: "Roboto Slab";}
+#fondo2{position: absolute; z-index: 100; width: 1022px; height: 575px; top: 0px; display: block;}
+#pendon2{position: absolute; z-index: 100; left: 28.8889px; top: -1.11111px; width: 98px; height: 130px; transform: translate(0px, 0px);}
+#escudo2{position: absolute; z-index: 101; width: 82px; height: 86px; left: 36.7783px; top: 18.9986px; transform: translate(0px, 0px);}
+#tniveles{position: absolute; z-index: 100; left: 357.778px; top: 82.222px; filter: drop-shadow(gray 4px 4px 3px);}
+#n1{position: absolute; z-index: 100; left: 240px; top: 201.778px; width: 100px; filter: drop-shadow(gray 4px 4px 3px);}
+#n2{position: absolute; z-index: 100; left: 355.557px; top: 201.889px; width: 100px; filter: drop-shadow(gray 4px 4px 3px);}
+#n3{position: absolute; z-index: 100; left: 465.556px; top: 201.889px; width: 100px; filter: drop-shadow(gray 4px 4px 3px);}
+#n4{position: absolute; z-index: 100; left: 580.001px; top: 201.889px; width: 100px; filter: drop-shadow(gray 4px 4px 3px);}
+#n5{position: absolute; z-index: 100; left: 694.445px; top: 201.889px; width: 100px; filter: drop-shadow(gray 4px 4px 3px);}
+#n6{position: absolute; z-index: 100; left: 238.888px; top: 328.778px; width: 100px; filter: drop-shadow(gray 4px 4px 3px);}
+#n7{position: absolute; z-index: 100; left: 352.222px; top: 328.889px; width: 100px; filter: drop-shadow(gray 4px 4px 3px);}
+#n8{position: absolute; z-index: 100; left: 465.555px; top: 328.889px; width: 100px; filter: drop-shadow(gray 4px 4px 3px);}
+#n9{position: absolute; z-index: 100; left: 577.778px; top: 328.889px; width: 100px; filter: drop-shadow(gray 4px 4px 3px);}
+#n10{position: absolute; z-index: 100; left: 694.445px; top: 328.889px; width: 100px; filter: drop-shadow(gray 4px 4px 3px);}
+#marca2{padding: 5px; position: absolute; width: 117px; z-index: 100; left: 905.555px; top: 535.555px; height: 46px; transform: translate(0px, 0px); font-family: Pacifico; color: rgb(255, 255, 255);}
+#b1{position: absolute; z-index: 100; width: 100px; left: 355.556px; top: 210px; display: block;}
+#b2{position: absolute; z-index: 100; width: 100px; left: 465.556px; top: 211.111px; display: block;}
+#b3{position: absolute; z-index: 100; width: 100px; left: 580px; top: 215.555px; display: block;}
+#b4{position: absolute; z-index: 100; width: 100px; left: 696.667px; top: 207.777px; display: block;}
+#b5{position: absolute; z-index: 100; width: 100px; left: 240px; top: 335.555px; display: block;}
+#b6{position: absolute; z-index: 100; width: 100px; left: 353.333px; top: 335.555px; display: block;}
+#b7{position: absolute; z-index: 100; width: 100px; left: 466.666px; top: 342.222px; display: block;}
+#b8{position: absolute; z-index: 100; width: 100px; left: 578.888px; top: 336.666px; display: block;}
+#b9{position: absolute; z-index: 100; width: 100px; left: 698.888px; top: 335.555px; display: block;}
+#pendon3{position: absolute; z-index: 100; left: 28.8889px; top: -1.11111px; width: 98px; height: 130px; transform: translate(0px, 0px);}
+#escudo3{position: absolute; z-index: 101; width: 82px; height: 86px; left: 36.7783px; top: 18.9986px; transform: translate(0px, 0px);}
+#marca3{padding: 5px; position: absolute; width: 117px; z-index: 100; left: 905.555px; top: 535.555px; height: 46px; transform: translate(0px, 0px); font-family: Pacifico; color: rgb(255, 255, 255);}
+#r0{position: absolute; width: 80px; height: 80px; z-index: 102; left: 352px; top: 346.333px; background: white; border-radius: 10px; filter: drop-shadow(dimgray 0px 5px 0px); border: 2px dashed dimgray;}
+#r1{position: absolute; width: 80px; height: 80px; z-index: 102; left: 516.333px; top: 346.333px; background: white; border-radius: 10px; filter: drop-shadow(dimgray 0px 5px 0px); border: 2px dashed dimgray;}
+#r3{position: absolute; width: 80px; height: 80px; z-index: 102; left: 598.333px; top: 346.333px; background: white; border-radius: 10px; filter: drop-shadow(dimgray 0px 5px 0px); border: 2px dashed dimgray;}
+#r4{position: absolute; width: 80px; height: 80px; z-index: 102; left: 434px; top: 346.333px; background: white; border-radius: 10px; filter: drop-shadow(dimgray 0px 5px 0px); border: 2px dashed dimgray;}
+#sil0{position: absolute; border: 3px solid black; z-index: 105; left: 178.111px; top: 449.668px; background: white; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 34px; font-family: "Roboto Slab"; font-weight: bold; font-style: normal; width: 80px; height: 80px;}
+#sil1{position: absolute; border: 3px solid black; z-index: 105; left: 262.667px; top: 449.668px; background: white; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 34px; font-family: "Roboto Slab"; font-weight: bold; font-style: normal; width: 80px; height: 80px;}
+#sil2{position: absolute; border: 3px solid black; z-index: 105; left: 347.667px; top: 449.668px; background: white; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 34px; font-family: "Roboto Slab"; font-weight: bold; font-style: normal; width: 80px; height: 80px;}
+#sil3{position: absolute; border: 3px solid black; z-index: 105; left: 432.667px; top: 449.668px; background: white; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 34px; font-family: "Roboto Slab"; font-weight: bold; font-style: normal; width: 80px; height: 80px;}
+#sil4{position: absolute; border: 3px solid black; z-index: 105; left: 517.667px; top: 449.668px; background: white; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 34px; font-family: "Roboto Slab"; font-weight: bold; font-style: normal; width: 80px; height: 80px;}
+#sil5{position: absolute; border: 3px solid black; z-index: 105; left: 602.667px; top: 449.668px; background: white; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 34px; font-family: "Roboto Slab"; font-weight: bold; font-style: normal; width: 80px; height: 80px;}
+#sil6{position: absolute; border: 3px solid black; z-index: 105; left: 687.667px; top: 449.668px; background: white; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 34px; font-family: "Roboto Slab"; font-weight: bold; font-style: normal; width: 80px; height: 80px;}
+#sil7{position: absolute; border: 3px solid black; z-index: 105; left: 772.667px; top: 449.668px; background: white; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 34px; font-family: "Roboto Slab"; font-weight: bold; font-style: normal; width: 80px; height: 80px;}
+#cont_imgs{position: absolute; width: 543px; height: 290px; border: 5px solid white; border-radius:85px; z-index: 101; left: 235.777px; top: 152.223px; transform: translate(0px, -53px);}
+#btnRead{position: absolute; z-index: 101; width: 82px; height: 81px; left: 743.222px; top: 191px; background: black; border-radius: 50%; padding: 8px;}
+#btnMay{cursor:pointer; position: absolute; z-index: 100; left: 902.222px; top: 11.1111px; width: 50px; height: 50px; transform: translate(0px, 0px); /*background: white; border-radius: 50%; border: 2px solid black;*/}
+#btnHome{cursor:pointer; position: absolute; z-index: 100; left: 844.222px; top: 11.1111px; width: 50px; height: 50px; transform: translate(0px, 0px); /*background: white; border-radius: 50%; border: 2px solid black;*/}
+#marco{display:none; position: absolute; z-index: 100; left: 192.222px; top: 64.4444px; width: 630px; height: 343px; transform: translate(0px, 0px);}
+#file_mu6vryvzt0f{position: absolute; z-index: 101; width: 271px; height: 289px; transform: translate(0px, 223px); left: 374.444px; top: -171.111px; display: block;}
+#btnRead2{position: absolute; z-index: 101; width: 82px; height: 81px; left: 191px; top: 191px; background: black; border-radius: 50%; padding: 8px; transform: scaleX(-1);}
+#pendon4{position: absolute; z-index: 100; left: 28.8889px; top: -1.11111px; width: 98px; height: 130px; transform: translate(0px, 0px);}
+#escudo4{position: absolute; z-index: 101; width: 82px; height: 86px; left: 36.7783px; top: 18.9986px; transform: translate(0px, 0px);}
+#marca4{padding: 5px; position: absolute; width: 117px; z-index: 100; left: 905.555px; top: 535.555px; height: 46px; transform: translate(0px, 0px); font-family: Pacifico; color: rgb(255, 255, 255);}
+#fondo4{position: absolute; z-index: 99; left: 0px; top: 0px; width: 1022px; height: 574px; transform: translate(0px, 0px);}
+#medallap{position: absolute; z-index: 100; left: 324.444px; top: 51.1111px; width: 352px; height: 305px; transform: translate(0px, 0px);}
+#txtf{padding: 5px; position: absolute; width: 428px; z-index: 100; left: 289.778px; top: 336.666px; height: 64px; transform: translate(0px, 0px); font-size: 55px; text-align: center; font-family: Merriweather; font-weight: bold;}
+#txtd{padding: 5px; position: absolute; width: 495px; z-index: 100; left: 305.556px; top: 398.889px; height: 64px; transform: translate(-49px, 0px); text-align: center; font-size: 28px; font-family: Merriweather;}
+#btnCont{position: absolute; z-index: 100; width: 88px; height: 86px; left: 455.444px; top: 463.445px; background: green; border-radius: 50%; padding: 5px; transform: translate(0px, -10px);}
+#fondo5{position: absolute; z-index: 100; width: 1022px; height: 575px; top: 0px; display: block; opacity: 0.7;}
+#pendon5{position: absolute; z-index: 100; left: 28.8889px; top: -1.11111px; width: 98px; height: 130px; transform: translate(0px, 0px);}
+#escudo5{position: absolute; z-index: 101; width: 82px; height: 86px; left: 36.7783px; top: 18.9986px; transform: translate(0px, 0px);}
+#marca5{padding: 5px; position: absolute; width: 117px; z-index: 100; left: 905.555px; top: 535.555px; height: 46px; transform: translate(0px, 0px); font-family: Pacifico; color: rgb(255, 255, 255);}
+#tituloexp{padding: 5px; position: absolute; width: 996px; z-index: 100; left: 12.7781px; top: 45.5552px; height: 46px; font-size: 48px; font-family: Merriweather; text-align: center; font-weight: bold;}
+#txt2{padding: 5px; position: absolute; width: 991px; z-index: 100; left: 14.1116px; top: 97.7776px; height: 64px; text-align: center; font-size: 28px; font-family: "Roboto Flex";}
+#marcoVid{position: absolute; width: 640px; height: 321px; border: 1px solid dimgray; z-index: 100; left: 206.666px; top: 155.556px; transform: translate(0px, 0px);}
+#btnReg{padding: 5px; position: absolute; width: 618px; z-index: 100; left: 9px; top: 476.666px; height: 64px; text-align: center; font-size: 28px; font-family: "Roboto Flex"; transform: translate(209px, 0px); font-weight: bold;}
+#fondo6{position: absolute; z-index: 100; width: 1022px; height: 575px; top: 0px; display: block; opacity: 0.7;}
+#pendon6{position: absolute; z-index: 100; left: 28.8889px; top: -1.11111px; width: 98px; height: 130px; transform: translate(0px, 0px);}
+#escudo6{position: absolute; z-index: 101; width: 82px; height: 86px; left: 36.7783px; top: 18.9986px; transform: translate(0px, 0px);}
+#marca6{padding: 5px; position: absolute; width: 117px; z-index: 100; left: 905.555px; top: 535.555px; height: 46px; transform: translate(0px, 0px); font-family: Pacifico; color: rgb(255, 255, 255);}
+#tituloexp_clon0_0{padding: 5px; position: absolute; width: 996px; z-index: 100; left: 12.7781px; top: 45.5552px; height: 46px; font-size: 48px; font-family: Merriweather; text-align: center; font-weight: bold;}
+#fondo1{position: absolute; z-index: 100; width: 1022px; height: 575px; top: 0px; display: block;}
+#escudo{position: absolute; z-index: 101; width: 82px; height: 86px; left: 36.7783px; top: 18.9986px; transform: translate(0px, 0px);}
+#titulo{padding: 5px; position: absolute; width: 996px; z-index: 100; left: 11.667px; top: 263.333px; height: 46px; font-size: 48px; font-family: Merriweather; text-align: center; font-weight: bold;}
+#iconoapp{position: absolute; z-index: 100; width: 198px; height: 193px; left: 412px; top: 69px;}
+#pendon{position: absolute; z-index: 100; left: 28.8889px; top: -1.11111px; width: 98px; height: 130px; transform: translate(0px, 0px);}
+#colegio{padding: 5px; position: absolute; width: 991px; z-index: 100; left: 18.556px; top: 322.222px; height: 64px; text-align: center; font-size: 28px; font-family: "Roboto Flex";}
+#marca{padding: 5px; position: absolute; width: 117px; z-index: 100; left: 905.555px; top: 535.555px; height: 46px; transform: translate(0px, 0px); font-family: Pacifico; color: rgb(255, 255, 255);}
+#loading{padding: 5px; position: absolute; width: 985px; z-index: 100; left: 19px; top: 372.222px; height: 64px; text-align: center; font-size: 36px; font-family: Ebgaramond; display: block;}
+#loading2{padding: 5px; position: absolute; width: 985px; z-index: 100; left: 19px; top: 212.222px; height: 64px; text-align: center; font-size: 36px; font-family: Ebgaramond; display: block;}
+#btnPlay{ display:none; cursor: pointer; position: absolute; z-index: 100; width: 105px; height: 103px; left: 461px; top: 373.445px; background: white; border-radius: 50%; padding: 3px;}
+.imgn{position: absolute; top:0px; left: 105px; display: none; transform: scale(1.2); filter: drop-shadow(0px 5px 5px black);}
+.nivel{cursor: pointer;}
+.res{display: none;}
+#fondo3{position: absolute; z-index: 100; width: 1022px; height: 575px; top: 0px; display: block;}
